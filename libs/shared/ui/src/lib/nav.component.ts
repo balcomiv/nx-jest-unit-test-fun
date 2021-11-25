@@ -1,20 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'nx-jest-unit-test-fun-nav',
   template: `
-    <p>
-      nav works!
-    </p>
+    <h2>Material Button Test</h2>
+    <button mat-stroked-button>Submit</button>
   `,
-  styles: [
-  ]
+  styles: [],
 })
-export class NavComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
-}
+export class NavComponent {}

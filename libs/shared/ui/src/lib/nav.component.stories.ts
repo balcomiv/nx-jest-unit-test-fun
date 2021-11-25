@@ -1,4 +1,5 @@
-import { moduleMetadata, Story, Meta } from '@storybook/angular';
+import { Meta, moduleMetadata, Story } from '@storybook/angular';
+import { SharedUiModule } from '..';
 import { NavComponent } from './nav.component';
 
 export default {
@@ -6,8 +7,8 @@ export default {
   component: NavComponent,
   decorators: [
     moduleMetadata({
-      imports: [],
-    })
+      imports: [SharedUiModule],
+    }),
   ],
 } as Meta<NavComponent>;
 
@@ -16,7 +17,5 @@ const Template: Story<NavComponent> = (args: NavComponent) => ({
   props: args,
 });
 
-
 export const Primary = Template.bind({});
-Primary.args = {
-}
+Primary.args = {};
