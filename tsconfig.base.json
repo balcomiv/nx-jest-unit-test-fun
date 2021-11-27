@@ -15,6 +15,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@nx-jest-unit-test-fun/jest-examples/testing-angular-with-jest": [
+        "libs/jest-examples/testing-angular-with-jest/src/index.ts"
+      ],
       "@nx-jest-unit-test-fun/shared/ui": ["libs/shared/ui/src/index.ts"]
     }
   },

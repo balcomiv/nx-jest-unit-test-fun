@@ -9,9 +9,7 @@
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
-          "outputs": [
-            "{options.outputPath}"
-          ],
+          "outputs": ["{options.outputPath}"],
           "options": {
             "outputPath": "dist/apps/app-one",
             "index": "apps/app-one/src/index.html",
@@ -91,9 +89,7 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/apps/app-one"
-          ],
+          "outputs": ["coverage/apps/app-one"],
           "options": {
             "jestConfig": "apps/app-one/jest.config.js",
             "passWithNoTests": true
@@ -121,20 +117,40 @@
         },
         "lint": {
           "builder": "@nrwl/linter:eslint",
-          "outputs": [
-            "{options.outputFile}"
-          ],
+          "outputs": ["{options.outputFile}"],
           "options": {
-            "lintFilePatterns": [
-              "apps/app-one-e2e/**/*.{js,ts}"
-            ]
+            "lintFilePatterns": ["apps/app-one-e2e/**/*.{js,ts}"]
           }
         }
       },
       "tags": [],
-      "implicitDependencies": [
-        "app-one"
-      ]
+      "implicitDependencies": ["app-one"]
+    },
+    "jest-examples-testing-angular-with-jest": {
+      "projectType": "library",
+      "root": "libs/jest-examples/testing-angular-with-jest",
+      "sourceRoot": "libs/jest-examples/testing-angular-with-jest/src",
+      "prefix": "nx-jest-unit-test-fun",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/jest-examples/testing-angular-with-jest"],
+          "options": {
+            "jestConfig": "libs/jest-examples/testing-angular-with-jest/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/jest-examples/testing-angular-with-jest/src/**/*.ts",
+              "libs/jest-examples/testing-angular-with-jest/src/**/*.html"
+            ]
+          }
+        }
+      },
+      "tags": []
     },
     "shared-ui": {
       "projectType": "library",
@@ -144,9 +160,7 @@
       "architect": {
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/shared/ui"
-          ],
+          "outputs": ["coverage/libs/shared/ui"],
           "options": {
             "jestConfig": "libs/shared/ui/jest.config.js",
             "passWithNoTests": true
@@ -178,9 +192,7 @@
         },
         "build-storybook": {
           "builder": "@nrwl/storybook:build",
-          "outputs": [
-            "{options.outputPath}"
-          ],
+          "outputs": ["{options.outputPath}"],
           "options": {
             "uiFramework": "@storybook/angular",
             "outputPath": "dist/storybook/shared-ui",
@@ -216,20 +228,14 @@
         },
         "lint": {
           "builder": "@nrwl/linter:eslint",
-          "outputs": [
-            "{options.outputFile}"
-          ],
+          "outputs": ["{options.outputFile}"],
           "options": {
-            "lintFilePatterns": [
-              "apps/shared-ui-e2e/**/*.{js,ts}"
-            ]
+            "lintFilePatterns": ["apps/shared-ui-e2e/**/*.{js,ts}"]
           }
         }
       },
       "tags": [],
-      "implicitDependencies": [
-        "shared-ui"
-      ]
+      "implicitDependencies": ["shared-ui"]
     }
   }
 }
